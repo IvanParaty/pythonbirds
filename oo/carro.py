@@ -1,3 +1,6 @@
+
+
+
 """
 Voce deve criar uma classe carro que vai possuir
 dois atributos compostos por outras duas classes:
@@ -24,8 +27,9 @@ O     L
 
 
     Exemplo:
-    #testando motor
-    >>> motor = motor()
+    >>>
+    >>> # testando motor
+    >>> motor = Motor()
     >>> motor.velocidade
     0
     >>> motor.acelerar()
@@ -44,8 +48,8 @@ O     L
     >>> motor.velocidade
     0
     >>> #testando direção
-    >>>direcao = Direcao()
-    >>>direcao.valor
+    >>> direcao = Direcao()
+    >>> direcao.valor
     'Norte'
     >>> direcao.girar_a_direita()
     >>> direcao.valor
@@ -71,61 +75,80 @@ O     L
     >>> direcao.girar_a_esquerda()
     >>> direcao.valor
     'Norte'
-    >>>carro = Carro(direcao, motor)
-    >>>carro.calcular_velocidade()
+    >>> carro = Carro(direcao, motor)
+    >>> carro.calcular_velocidade()
     0
-    >>>carro.acelerar()
-    >>>carro.calcular_velocidade()
+    >>> carro.acelerar()
+    >>> carro.calcular_velocidade()
     1
-    >>>carro.acelerar()
-    >>>carro.calcular_velocidade()
+    >>> carro.acelerar()
+    >>> carro.calcular_velocidade()
     2
-    >>>carro.frear()
-    >>>carro.calcular_velocidade()
+    >>> carro.frear()
+    >>> carro.calcular_velocidade()
     0
     >>> carro.calcular_direcao()
-    'Norte'
-    >>>carro.girar_a_direita()
+    >>> 'Norte'
+    >>> carro.girar_a_direita()
     >>> carro.calcular_direcao()
-    'Leste'
-    >>>carro.girar_a_esquerda()
+    >>> 'Leste'
+    >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
-    'Norte'
-    >>>carro.girar_a_esquerda()
+    >>> 'Norte'
+    >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
-    'Oeste'
+    >>> 'Oeste'
 """
-
-
+NORTE = "Norte"
+LESTE = "Leste"
+SUL = 'Sul'
+OESTE = 'Oeste'
 
 class Carro():
-    dire = {'Norte':'N', 'Leste':'L', 'Sul':'S', 'Oeste':'O'}
     def __init__(self):
-        self.velo = 0
+        self.calcular_direcao = 0
 
-    def  motor(self, velo=None):
-        self.velo = velo
-        return
-
-    def direcao(self):
-        return
-
-if __name__ == '__main__':
-    c = Carro()
-    print(c.motor())
+    def acelerar(self):
+        self.calcular_direcao +=1
 
 
 
 
-    if __name__ == '__main__':
-        car = Carro()
-        tec = '1'
-        velo = 0
-        dire = "N"
-        while tec != '0':
-            tec = input('Entre com uma tecla')
-            print (tec)
-            if tec == '+':
-                pass
+class Direcao():
+
+    rotacao_a_direita = {NORTE: LESTE, LESTE: SUL, SUL: OESTE, OESTE: NORTE}
+    rotacao_a_esquerda = {NORTE: OESTE, OESTE: SUL, SUL: LESTE, LESTE: NORTE}
+    def __init__(self):
+        self.valor = NORTE
+
+    def valor(self):
+        pass
+
+    def girar_a_direita(self):
+        self.valor = self.rotacao_a_direita[self.valor]
+
+    def girar_a_esquerda(self):
+        self.valor = self.rotacao_a_esquerda[self.valor]
+
+
+class Motor():
+    def __init__(self):
+        self.velocidade = 0
+
+    def velocidade(self):
+        pass
+
+    def acelerar(self):
+        self.velocidade += 1
+
+    def frear(self):
+        self.velocidade -= 2
+        self.velocidade = max(0,self.velocidade)
+
+    pass
+
+
+
+
 
 
