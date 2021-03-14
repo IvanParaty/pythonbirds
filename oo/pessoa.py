@@ -25,7 +25,7 @@ if __name__ == '__main__':
     print(luciano.idade)
     for filho in luciano.filhos:
         print(filho.nome)
-    luciano.filhos = 3
+    pessoa =
     luciano.sobrenome = 'Ramalho'
     del luciano.filhos
     luciano.olhos = 1
@@ -39,5 +39,6 @@ if __name__ == '__main__':
     print(id(Pessoa.olhos), id(luciano.olhos),id(renzo.olhos))
     print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
     print(Pessoa.nome_etributos_de_classe(), luciano.nome_etributos_de_classe())
+    print(isinstance(pessoa, Pessoa))
 
 
