@@ -25,7 +25,7 @@ if __name__ == '__main__':
     print(luciano.idade)
     for filho in luciano.filhos:
         print(filho.nome)
-    pessoa =
+  #  pessoa =
     luciano.sobrenome = 'Ramalho'
     del luciano.filhos
     luciano.olhos = 1
